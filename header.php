@@ -21,7 +21,7 @@
 <body>
 
     <header class="header text-center">
-        <a class="site-title pt-lg-4 mb-0" href="index.html"><?php echo get_bloginfo('name' ) ?></a>
+        <a class="site-title pt-lg-4 mb-0" href="index.html"><?php echo get_bloginfo('name') ?></a>
 
         <nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -31,37 +31,37 @@
 
             <div id="navigation" class="collapse navbar-collapse flex-column">
                 <?php
-                if( function_exists('the_custom_logo')){
-                  $custom_logo_id = get_theme_mod('custom_logo' );
-                  $logo = wp_get_attachment_image_src( $custom_logo_id );
+                if (function_exists('the_custom_logo')) {
+                    $custom_logo_id = get_theme_mod('custom_logo');
+                    $logo = wp_get_attachment_image_src($custom_logo_id);
                 }
-    
+
                 ?>
-                <img class="mb-3 mx-auto logo" src="<?php echo $logo[0] ?>" alt="logo" >			
+                <img class="mb-3 mx-auto logo" src="<?php echo $logo[0] ?>" alt="logo">
 
                 <?php
-                
-                wp_nav_menu( array(
+
+                wp_nav_menu(array(
                     'theme_location' => 'primary',
                     'menu' => 'primary',
                     'container' => '',
                     'items_wrap' => ' <ul class="navbar-nav flex-column text-sm-center text-md-left">%3$s</ul>',
-                 
-                ) )
+
+                ))
                 ?>
 
-      
+
+
                 <hr>
-                <ul class="social-list list-inline py-3 mx-auto">
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
-                </ul>
+
 
             </div>
         </nav>
+
+        <?php
+        dynamic_sidebar('sidebar-1');
+        ?>
+
     </header>
 
 
@@ -69,3 +69,27 @@
         <header class="page-title theme-bg-light text-center gradient py-5">
             <h1 class="heading"><?php the_title(); ?></h1>
         </header>
+
+
+
+        <div class="profile-header">
+            <div class="cover-image"></div>
+            <div class="profile-content">
+                <img src="avatar.jpg" alt="Avatar" class="avatar" />
+                <div class="profile-info">
+                    <h2>Md Alamin Bali</h2>
+                    <p>I am a Technician</p>
+                    <div class="socials">
+                        <button>📘</button>
+                        <button>📸</button>
+                        <button>💼</button>
+                    </div>
+                </div>
+                <div class="details">
+                    <div><strong>Email:</strong> example@gmail.com</div>
+                    <div><strong>Birthday:</strong> 20 August</div>
+                    <div><strong>Phone:</strong> +880123456789</div>
+                    <div><strong>Location:</strong> Barisal, Bangladesh</div>
+                </div>
+            </div>
+        </div>
